@@ -23,7 +23,7 @@ public class Loginsenhav2 {
          */
         ArrayList<Usuarioesenhav2> usuarioesenha = new ArrayList<Usuarioesenhav2>();
 
-        /*Criação de usuario no modelo 1 do contrutor SEM paramentro definido na classe. 
+        /*Criação de usuario no modelo de contrutor SEM paramentro definido na classe. 
         *Onde é necessario pra esse caso setar o usuario e setar a senha individualmente e 
         *depois mais uma linha de codigo para adicionar o usuario 
          */
@@ -31,22 +31,15 @@ public class Loginsenhav2 {
         usuariosenha2.setUsuario("modelo1");
         usuariosenha2.setSenha("sergio01");
         usuarioesenha.add(usuariosenha2);
-
-        /*Criação de usuario no modelo 2 de contrutor com paramentro.
-        *Os paramentros já foram passados na classe. Assim é possivel passar o novo
-        *usuario e senha apenas substituindo os paramentros pré-informados na classe
-        *e por fim adicionando o novo usuario com add.()  
-         */
-        Usuarioesenhav2 userpass = new Usuarioesenhav2("modelo2", "senha2");
-        usuarioesenha.add(userpass);
-
-        /*Criação de usuario no modelo 2 do contrutor com paramentro definido na classe.
-        * Nessa sintaxe adciona um novo usuario e senha diretamente especificando nos 
-        * paranteses. É a forma mais enxuta de escrever o codigo
-         */
-        usuarioesenha.add(new Usuarioesenhav2("sergio1", "ser"));
-        usuarioesenha.add(new Usuarioesenhav2("sergio2", "gio"));
-
+        
+        usuariosenha2.setUsuario("carlos");
+        usuariosenha2.setSenha("pai01");
+        usuarioesenha.add(usuariosenha2);
+        
+        usuariosenha2.setUsuario("manuelle");
+        usuariosenha2.setSenha("manu01");
+        usuarioesenha.add(usuariosenha2);
+               
         /*Linha de inserção de entrada do usuario do sistema:
          */
         System.out.println("login> ");
@@ -60,8 +53,9 @@ public class Loginsenhav2 {
          */
         for (int i = 0; i < usuarioesenha.size(); i++) {
             if ((usuarioesenha.get(i).getUsuario().equals(login)) && (usuarioesenha.get(i).getSenha().equals(senha))) {
-                System.out.printf("Usuário %s logado com sucesso.", login);
+                System.out.printf("Usuário %s logado com sucesso!", login);
                 UsuarioMsg();
+                
                 /*Break será usado para iterromper o loop  da condicao 
         *se for digitado corretamente*/
                 break;
@@ -84,13 +78,13 @@ public class Loginsenhav2 {
     public static void UsuarioMsg() {
         LocalTime horaatual = LocalTime.now();
         if (horaatual.isBefore(LocalTime.of(6, 0, 0))) {
-            System.out.println("Boa madurgada, você se logou ao nosso sistema.");
+            System.out.println(" Boa madurgada, você se logou ao nosso sistema.");
         } else if (horaatual.isBefore(LocalTime.of(12, 0, 0))) {
-            System.out.println("Bom dia, você se logou ao nosso sistema.");
+            System.out.println(" Bom dia, você se logou ao nosso sistema.");
         } else if (horaatual.isBefore(LocalTime.of(18, 0, 0))) {
-            System.out.println("Boa tarde, você se logou ao nosso sistema.");
+            System.out.println(" Boa tarde, você se logou ao nosso sistema.");
         } else {
-            System.out.println("Boa noite, você se logou ao nosso sistema.");
+            System.out.println(" Boa noite, você se logou ao nosso sistema.");
         }
 
     }
